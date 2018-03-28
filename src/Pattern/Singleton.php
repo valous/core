@@ -15,20 +15,25 @@ class Singleton
 
     /**
      * Singleton constructor.
+     *
+     * @param $childName
      */
-    protected function __construct()
+    protected function __construct($childName)
     {
+        $this->childName = $childName;
     }
 
 
     /**
      * @return Singleton
      */
-    public static function init()
+    public final static function init()
     {
         if (!self::$instance)
         {
-            self::$instance = new self();
+            $className = get_called_class();
+
+            self::$instance = new $className();
         }
 
         return self::$instance;
