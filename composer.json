@@ -1,0 +1,15 @@
+{
+  "autoload": {
+    "psr-4": {
+      "Valous\\Core\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "David Valenta",
+      "email": "info@davidvalenta.cz",
+      "homepage": "http://www.davidvalenta.cz",
+      "role": "Developer"
+    }
+  ]
+}
