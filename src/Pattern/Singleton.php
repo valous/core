@@ -15,12 +15,9 @@ class Singleton
 
     /**
      * Singleton constructor.
-     *
-     * @param $childName
      */
-    protected function __construct($childName)
+    protected function __construct()
     {
-        $this->childName = $childName;
     }
 
 
