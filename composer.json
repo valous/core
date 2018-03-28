@@ -1,4 +1,6 @@
 {
+  "name": "valous/core",
+  "type": "library",
   "autoload": {
     "psr-4": {
       "Valous\\Core\\": "src/"
@@ -8,8 +10,7 @@
     {
       "name": "David Valenta",
       "email": "info@davidvalenta.cz",
-      "homepage": "http://www.davidvalenta.cz",
-      "role": "Developer"
+      "homepage": "http://www.davidvalenta.cz"
     }
   ]
 }
