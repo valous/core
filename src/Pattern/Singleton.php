@@ -10,7 +10,7 @@ namespace Valous\Core\Pattern;
 class Singleton
 {
     /** @var Singleton */
-    private static $instance = null;
+    private static $instances = [];
 
 
     /**
@@ -26,13 +26,13 @@ class Singleton
      */
     public final static function init()
     {
-        if (!self::$instance)
-        {
-            $className = get_called_class();
+        $className = get_called_class();
 
-            self::$instance = new $className();
+        if (!isset(self::$instances[$className]))
+        {
+            self::$instances[$className] = new $className();
         }
 
-        return self::$instance;
+        return self::$instances[$className];
     }
 }

@@ -13,5 +13,8 @@
       "email": "info@davidvalenta.cz",
       "homepage": "http://www.davidvalenta.cz"
     }
-  ]
+  ],
+  "require": {
+    "valous/annotation": "dev-master"
+  }
 }
