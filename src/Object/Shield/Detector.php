@@ -3,6 +3,7 @@
 
 namespace Valous\Core\Object\Shield;
 
+use Valous\Core\Object\Shield\Protection\ParamProtection;
 use Valous\Core\Object\Shield\Protection\VarProtection;
 use Valous\Core\Pattern\Singleton;
 
@@ -16,7 +17,8 @@ class Detector extends Singleton
 
     protected function __construct()
     {
-        $this->protections['var'] = new VarProtection();
+        $this->protections['var']   = new VarProtection();
+        $this->protections['param'] = new ParamProtection();
     }
 
 

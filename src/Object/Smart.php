@@ -3,34 +3,26 @@
 
 namespace Valous\Core\Object;
 
-use Valous\Annotation\Engine;
-use Valous\Annotation\Parser\Data\Set;
-use Valous\Core\Object\Shield\Detector;
-
 
 /**
  * @author David Valenta <david.valenta96@gmail.com>
  */
 abstract class Smart
 {
-    /** @var Set  */
-    private $childRules;
-
-    /** @var Detector */
-    private $detector;
-
-    public function __construct()
+    protected function __construct()
     {
-        /** @var Engine $engine */
-        $engine = Engine::init();
-        $this->childRules = $engine->parse($this);
-
-        $this->detector = Detector::init();
     }
 
-
-    public function __set($name, $value)
+    /**
+     * @param mixed ...$args
+     * @return Handler
+     * @throws \ReflectionException
+     */
+    public static function create(...$args)
     {
-        $this->detector->defence('var', $this->childRules->properties[$name], $value);
+        $class    = get_called_class();
+        $instance = new $class(...$args);
+
+        return new Handler($instance);
     }
 }
