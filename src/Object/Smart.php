@@ -9,20 +9,27 @@ namespace Valous\Core\Object;
  */
 abstract class Smart
 {
+    protected $handler          = null;
+    private static $tempHandler = null;
+
+    /**
+     * Smart constructor.
+     * @throws \ReflectionException
+     */
     protected function __construct()
     {
+        $this->handler = self::$tempHandler = new Handler($this);
     }
 
     /**
      * @param mixed ...$args
      * @return Handler
-     * @throws \ReflectionException
      */
     public static function create(...$args)
     {
         $class    = get_called_class();
         $instance = new $class(...$args);
 
-        return new Handler($instance);
+        return self::$tempHandler;
     }
 }

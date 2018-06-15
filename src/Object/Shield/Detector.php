@@ -17,8 +17,8 @@ class Detector extends Singleton
 
     protected function __construct()
     {
-        $this->protections['var']   = new VarProtection();
-        $this->protections['param'] = new ParamProtection();
+        $this->protections[VarProtection::DOC_ALIAS]   = new VarProtection();
+        $this->protections[ParamProtection::DOC_ALIAS] = new ParamProtection();
     }
 
 

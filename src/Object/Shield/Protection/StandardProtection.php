@@ -2,6 +2,7 @@
 
 
 namespace Valous\Core\Object\Shield\Protection;
+
 use Valous\Core\Object\Shield\Exception\InvalidTypeException;
 
 
