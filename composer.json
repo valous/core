@@ -16,5 +16,6 @@
   ],
   "require": {
     "valous/annotation": "dev-master"
-  }
+  },
+  "minimum-stability": "dev"
 }
